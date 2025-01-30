@@ -78,6 +78,8 @@ int main()
         gdl::ScreenAspect::Screen4x3,
         init,
         update,  // std::function callbacks
-        render
+        render,
+        gdl::PlatformInitFlag::FlagFullScreen
     );
+    glutFullScreen();
 }
