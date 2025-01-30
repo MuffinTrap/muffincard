@@ -1,23 +1,37 @@
 // sync data implementation
 #ifdef SYNC_PLAYER
 #include "rocket/track.h"
-static track_key faceScale_keys[] = {{ 0, 0.699997, KEY_STEP}, };
-const sync_track faceScale = { "faceScale", faceScale_keys,1};
-static track_key faceRotation_keys[] = {{ 0, 5.900002, KEY_STEP}, };
+static track_key faceX_keys[] = {{ 96, 0.000000, KEY_STEP}, { 104, 20.000000, KEY_STEP}, { 112, -20.000000, KEY_STEP}, { 120, 20.000000, KEY_STEP}, { 128, -20.000000, KEY_STEP}, { 136, 20.000000, KEY_STEP}, { 144, -20.000000, KEY_STEP}, { 152, 10.000000, KEY_STEP}, { 156, -10.000000, KEY_STEP}, { 160, 10.000000, KEY_STEP}, { 164, -10.000000, KEY_STEP}, { 168, 10.000000, KEY_STEP}, { 172, -10.000000, KEY_STEP}, { 176, 10.000000, KEY_STEP}, { 180, -10.000000, KEY_STEP}, { 184, 10.000000, KEY_STEP}, { 188, -10.000000, KEY_STEP}, { 192, 10.000000, KEY_STEP}, { 196, -10.000000, KEY_STEP}, { 200, 10.000000, KEY_STEP}, { 204, -10.000000, KEY_STEP}, { 208, 10.000000, KEY_STEP}, { 212, -10.000000, KEY_STEP}, { 220, 10.000000, KEY_STEP}, { 224, -10.000000, KEY_STEP}, { 228, 10.000000, KEY_STEP}, { 232, -10.000000, KEY_STEP}, { 236, 10.000000, KEY_STEP}, { 240, 10.000000, KEY_STEP}, { 244, 10.000000, KEY_STEP}, { 248, 10.000000, KEY_STEP}, { 252, 10.000000, KEY_STEP}, { 256, 10.000000, KEY_STEP}, { 260, 10.000000, KEY_STEP}, { 264, -10.000000, KEY_STEP}, { 268, 10.000000, KEY_STEP}, { 272, -10.000000, KEY_STEP}, { 276, 10.000000, KEY_STEP}, { 280, -10.000000, KEY_STEP}, };
+const sync_track faceX = { "faceX", faceX_keys,39};
+static track_key faceY_keys[] = {{ 120, -1.300003, KEY_STEP}, { 216, 10.000000, KEY_STEP}, { 220, -10.000000, KEY_STEP}, { 224, 10.000000, KEY_STEP}, { 228, -10.000000, KEY_STEP}, { 232, 10.000000, KEY_STEP}, { 236, -10.000000, KEY_STEP}, { 240, 10.000000, KEY_STEP}, { 244, -10.000000, KEY_STEP}, { 248, 10.000000, KEY_STEP}, { 252, -10.000000, KEY_STEP}, { 256, 10.000000, KEY_STEP}, { 260, -10.000000, KEY_STEP}, { 264, 10.000000, KEY_STEP}, { 268, -10.000000, KEY_STEP}, { 272, 10.000000, KEY_STEP}, { 276, -10.000000, KEY_STEP}, };
+const sync_track faceY = { "faceY", faceY_keys,17};
+static track_key faceScale_keys[] = {{ 0, 30.000000, KEY_LINEAR}, { 96, 2.000000, KEY_LINEAR}, { 104, 2.100001, KEY_LINEAR}, { 120, 1.800000, KEY_STEP}, { 288, 2.000000, KEY_LINEAR}, { 296, 2.500000, KEY_STEP}, { 304, 2.000000, KEY_LINEAR}, { 312, 2.500000, KEY_STEP}, { 320, 2.000000, KEY_LINEAR}, { 328, 2.500000, KEY_STEP}, { 336, 2.000000, KEY_LINEAR}, { 344, 2.500000, KEY_STEP}, { 352, 2.000000, KEY_LINEAR}, { 360, 2.500000, KEY_LINEAR}, { 368, 5.000000, KEY_STEP}, { 376, 2.000000, KEY_LINEAR}, { 384, 2.500000, KEY_LINEAR}, { 392, 5.000000, KEY_STEP}, { 400, 2.000000, KEY_LINEAR}, { 408, 2.500000, KEY_LINEAR}, { 416, 5.000000, KEY_STEP}, { 424, 2.000000, KEY_LINEAR}, { 432, 2.500000, KEY_LINEAR}, { 440, 5.000000, KEY_LINEAR}, { 528, 2.000000, KEY_STEP}, { 640, 42.299999, KEY_STEP}, };
+const sync_track faceScale = { "faceScale", faceScale_keys,26};
+static track_key faceRotation_keys[] = {{ 0, 4.300002, KEY_STEP}, };
 const sync_track faceRotation = { "faceRotation", faceRotation_keys,1};
-static track_key faceZeta_keys[] = {{ 0, -49.000000, KEY_STEP}, };
+static track_key faceZeta_keys[] = {{ 0, -19.000000, KEY_STEP}, };
 const sync_track faceZeta = { "faceZeta", faceZeta_keys,1};
-static track_key presentY_keys[] = {{ 0, -17.799995, KEY_STEP}, };
-const sync_track presentY = { "presentY", presentY_keys,1};
-static track_key presentZ_keys[] = {{ 0, -10.800010, KEY_STEP}, };
-const sync_track presentZ = { "presentZ", presentZ_keys,1};
-static track_key presentVisible_keys[] = {{ 0, 1.000000, KEY_STEP}, };
-const sync_track presentVisible = { "presentVisible", presentVisible_keys,1};
-static track_key scrollX_keys[] = {{ 0, 0.000000, KEY_STEP}, };
-const sync_track scrollX = { "scrollX", scrollX_keys,1};
-static track_key scrollY_keys[] = {{ 0, 140.000000, KEY_STEP}, };
-const sync_track scrollY = { "scrollY", scrollY_keys,1};
-static track_key scrollSize_keys[] = {{ 0, 36.000000, KEY_STEP}, };
-const sync_track scrollSize = { "scrollSize", scrollSize_keys,1};
+static track_key presentX_keys[] = {{ 288, 0.000000, KEY_LINEAR}, { 296, 5.000000, KEY_LINEAR}, { 320, -10.000000, KEY_LINEAR}, { 328, 10.000000, KEY_RAMP}, { 344, -7.000000, KEY_LINEAR}, { 368, 5.000000, KEY_LINEAR}, { 389, 8.000000, KEY_RAMP}, { 402, -4.000000, KEY_RAMP}, { 424, 8.000000, KEY_STEP}, { 432, 0.000000, KEY_STEP}, };
+const sync_track presentX = { "presentX", presentX_keys,10};
+static track_key presentY_keys[] = {{ 0, 0.000000, KEY_STEP}, { 1, 0.000000, KEY_STEP}, { 304, -10.000000, KEY_LINEAR}, { 312, 10.000000, KEY_LINEAR}, { 336, -10.000000, KEY_LINEAR}, { 344, 10.000000, KEY_LINEAR}, { 360, 6.000000, KEY_LINEAR}, { 368, -8.900002, KEY_LINEAR}, { 400, 7.000000, KEY_LINEAR}, { 424, -10.000000, KEY_STEP}, { 432, 0.000000, KEY_STEP}, };
+const sync_track presentY = { "presentY", presentY_keys,11};
+static track_key presentZ_keys[] = {{ 0, 9.199982, KEY_STEP}, { 1, -6.000000, KEY_STEP}, { 288, -3.799999, KEY_STEP}, { 312, -5.000000, KEY_LINEAR}, { 360, -10.400000, KEY_LINEAR}, { 384, -7.000000, KEY_LINEAR}, { 400, -5.000000, KEY_LINEAR}, { 424, -12.000000, KEY_STEP}, { 432, -30.000000, KEY_LINEAR}, { 488, 0.000000, KEY_STEP}, };
+const sync_track presentZ = { "presentZ", presentZ_keys,10};
+static track_key presentScale_keys[] = {{ 0, 150.000000, KEY_LINEAR}, { 288, 100.000000, KEY_RAMP}, { 296, 300.000000, KEY_RAMP}, { 304, 100.000000, KEY_LINEAR}, { 312, 300.000000, KEY_RAMP}, { 320, 100.000000, KEY_LINEAR}, { 328, 300.000000, KEY_RAMP}, { 336, 100.000000, KEY_LINEAR}, { 344, 300.000000, KEY_LINEAR}, { 352, 100.000000, KEY_RAMP}, { 360, 300.000000, KEY_LINEAR}, { 368, 100.000000, KEY_LINEAR}, { 376, 300.000000, KEY_LINEAR}, { 384, 150.000000, KEY_RAMP}, { 392, 60.000000, KEY_RAMP}, { 408, 400.000000, KEY_LINEAR}, { 424, 40.000000, KEY_STEP}, };
+const sync_track presentScale = { "presentScale", presentScale_keys,17};
+static track_key presentVisible_keys[] = {{ 0, 0.000000, KEY_STEP}, { 288, 1.000000, KEY_STEP}, };
+const sync_track presentVisible = { "presentVisible", presentVisible_keys,2};
+static track_key scrollX_keys[] = {{ 0, 640.000000, KEY_STEP}, { 96, 644.000061, KEY_LINEAR}, { 659, -11990.000000, KEY_STEP}, { 663, -200700.000000, KEY_STEP}, { 664, 0.000000, KEY_STEP}, { 792, -11440.000000, KEY_STEP}, };
+const sync_track scrollX = { "scrollX", scrollX_keys,6};
+static track_key scrollY_keys[] = {{ 0, 140.000000, KEY_STEP}, { 96, 140.000000, KEY_RAMP}, { 160, 392.000000, KEY_RAMP}, { 264, 32.000000, KEY_RAMP}, { 336, 400.000000, KEY_RAMP}, { 400, 32.000000, KEY_RAMP}, { 480, 150.000000, KEY_LINEAR}, { 600, 400.000000, KEY_RAMP}, { 608, 32.000000, KEY_RAMP}, { 616, 500.000000, KEY_RAMP}, { 624, 32.000000, KEY_RAMP}, { 632, 400.000000, KEY_RAMP}, { 640, 32.000000, KEY_RAMP}, { 648, 301.000000, KEY_STEP}, { 664, 0.000000, KEY_STEP}, };
+const sync_track scrollY = { "scrollY", scrollY_keys,15};
+static track_key scrollSize_keys[] = {{ 0, 36.000000, KEY_LINEAR}, { 520, 32.000000, KEY_LINEAR}, { 568, 32.000000, KEY_STEP}, { 595, 32.000000, KEY_LINEAR}, { 648, 265.000000, KEY_STEP}, { 664, 0.000000, KEY_STEP}, };
+const sync_track scrollSize = { "scrollSize", scrollSize_keys,6};
+static track_key greetX_keys[] = {{ 0, 640.000000, KEY_STEP}, { 96, 640.000000, KEY_LINEAR}, { 659, -7800.000000, KEY_STEP}, { 664, 0.000000, KEY_STEP}, { 792, -11440.000000, KEY_STEP}, };
+const sync_track greetX = { "greetX", greetX_keys,5};
+static track_key greetY_keys[] = {{ 0, 100.000000, KEY_STEP}, { 96, 32.000000, KEY_RAMP}, { 208, 400.000000, KEY_RAMP}, { 288, 34.000000, KEY_RAMP}, { 344, 400.000000, KEY_RAMP}, { 384, 32.000000, KEY_RAMP}, { 432, 400.000000, KEY_RAMP}, { 480, 102.000000, KEY_RAMP}, { 536, 400.000000, KEY_LINEAR}, { 648, 400.000000, KEY_STEP}, { 664, 0.000000, KEY_STEP}, };
+const sync_track greetY = { "greetY", greetY_keys,11};
+static track_key greetSize_keys[] = {{ 0, 32.000000, KEY_STEP}, { 96, 32.000000, KEY_LINEAR}, { 160, 64.000000, KEY_LINEAR}, { 232, 32.000000, KEY_LINEAR}, { 280, 28.000000, KEY_LINEAR}, { 320, 32.000000, KEY_LINEAR}, { 368, 32.000000, KEY_LINEAR}, { 416, 32.000000, KEY_LINEAR}, { 464, 30.000000, KEY_LINEAR}, { 648, 32.000000, KEY_STEP}, { 664, 0.000000, KEY_STEP}, };
+const sync_track greetSize = { "greetSize", greetSize_keys,11};
 #endif
  // SYNC_PLAYER

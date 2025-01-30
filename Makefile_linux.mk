@@ -35,7 +35,7 @@ LDFLAGS = -lmgdl -lpng -lsndfile -lopenal -lGL -lGLU -lglut -lvorbisidec -logg -
 
 
 
-
+# CXXFLAGS += -DSYNC_PLAYER
 
 
 
