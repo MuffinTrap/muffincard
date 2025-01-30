@@ -1,0 +1,17 @@
+<sync rows="128">
+	<tracks>
+		<track name="faceScale">
+			<key interpolation="0" value="2" row="0"/>
+		</track>
+		<track name="presentY">
+			<key interpolation="0" value="-17.799995" row="0"/>
+		</track>
+		<track name="presentZ">
+			<key interpolation="0" value="-10.80001" row="0"/>
+		</track>
+		<track name="presentVisible">
+			<key interpolation="0" value="1" row="0"/>
+		</track>
+	</tracks>
+	<bookmarks/>
+</sync>
