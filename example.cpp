@@ -15,7 +15,7 @@
     static ROCKET_TRACK presentVisible;
     static ROCKET_TRACK scrollX;
     static ROCKET_TRACK scrollY;
-    static ROCKET_TRACK scrollSz;
+    static ROCKET_TRACK scrollSize;
 #endif
 
 
@@ -54,7 +54,7 @@ void Example::Init()
     glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    bool rocketInit = gdl::RocketSync::InitRocket(sampleMusic, 120, 4);
+    gdl::RocketSync::InitRocket(sampleMusic, 120, 4);
 #ifndef SYNC_PLAYER
    faceScale = gdl::RocketSync::GetTrack("faceScale");
    faceRotation = gdl::RocketSync::GetTrack("faceRotation");
@@ -64,7 +64,7 @@ void Example::Init()
    presentVisible = gdl::RocketSync::GetTrack("presentVisible");
    scrollX = gdl::RocketSync::GetTrack("scrollX");
    scrollY = gdl::RocketSync::GetTrack("scrollY");
-   scrollSz = gdl::RocketSync::GetTrack("scrollSize");
+   scrollSize = gdl::RocketSync::GetTrack("scrollSize");
 #endif
     gdl::RocketSync::StartSync();
 }
@@ -80,7 +80,7 @@ void Example::Update()
     pv = gdl::RocketSync::GetFloat(presentVisible);
     textX = gdl::RocketSync::GetFloat(scrollX);
     textY = gdl::RocketSync::GetFloat(scrollY);
-    textSz = gdl::RocketSync::GetFloat(scrollSz);
+    textSz = gdl::RocketSync::GetFloat(scrollSize);
 #ifndef SYNC_PLAYER
     if (gdl::GetController(0).ButtonPress(gdl::WiiButtons::Button2))
     {
